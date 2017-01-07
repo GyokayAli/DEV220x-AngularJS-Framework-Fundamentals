@@ -18,13 +18,13 @@
         <div ng-hide="model.search">
             Enter the search criteria above.
         </div>
-        <div ng-show="model.search" ng-repeat="top in model.availableToppings | filter:model.search">
-            <span ng-click="addTopping(top)">{{top}}</span>
+        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
+            <span ng-click="addTopping(t)">{{t}}</span>
         </div>
         
         <h3>Selected Toppings</h3>
-        <div ng-repeat="top in model.toppings">
-            {{top}}
+        <div ng-repeat="t in model.toppings">
+            {{t}}
         </div>
     </div>
 
