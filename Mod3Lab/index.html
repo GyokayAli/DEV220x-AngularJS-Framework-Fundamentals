@@ -9,20 +9,30 @@
 
 <body ng-controller="pizzaController">
     <div class="container">
-        <h1>Tony's Pizza</h1>
+        <h1>Gyok's Pizza</h1>
         <h2>{{model.title}}</h2>
-        
+
         <h3>Topping Search</h3>
         <input type="text" class="form-control" ng-model="model.search">
 
         <div ng-hide="model.search">
-            Enter the search criteria above.
+            Enter search criteria above
         </div>
-        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
+
+        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search as filteredToppings">
             <span ng-click="addTopping(t)">{{t}}</span>
         </div>
-        
-        <h3>Selected Toppings</h3>
+
+        <div class="alert alert-success" ng-show="model.showAdded">
+            Topping added.
+            <input type="button" value="close" ng-click="model.showAdded = false">
+        </div>
+
+        <div class="alert alert-danger" ng-show="model.search.length > 0 && filteredToppings.length === 0">
+            No results.
+        </div>
+
+        <h3 ng-show='model.toppings.length > 0'>Selected Toppings</h3>
         <div ng-repeat="t in model.toppings">
             {{t}}
         </div>
