@@ -10,13 +10,16 @@ app.controller('labController', [
         $scope.getRepos = getRepos;
         $scope.loadDetail = loadDetail;
 
-        function getRepos() {
-            $scope.model.repos = gitHub.getAll();
+        function getRepos(search) {
+            $scope.model.repos = gitHub.getAll({
+                org: search
+            });
         }
 
-        function loadDetail(name) {
+        function loadDetail(name, search) {
             $scope.model.detail = null;
             $scope.model.detail = gitHub.getDetail({
+                org: search,
                 id: name
             });
         }
