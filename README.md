@@ -1,4 +1,4 @@
-# DEV220x AngularJS Framework Fundamentals
+# DEV220x: AngularJS Framework Fundamentals
 <a href="https://www.edx.org/course/angularjs-framework-fundamentals-microsoft-dev220x"><i>AngularJS Fundamentals Course by Microsoft at edX</i></a>
 
 Angular version: 1.5x
